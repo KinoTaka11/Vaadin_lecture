@@ -2,6 +2,7 @@
 
 ### Mr.平川資料
 [神資料](Vaadin資料.pdf)
+[test](https://kkreg.slack.com/files/U07QU26FX6C/F07T91F5XK4/vaadin______.pdf)
 
 ##目次
 - [環境設定](/環境設定/環境設定.md)
