@@ -173,6 +173,8 @@ public class ForLectureView extends VerticalLayout {
 ※ PageTitleアノテーションはページを作るために必須ではないです。
 addを忘れるとそのコンポーネントはページに追加されないので注意
 
+![ページ作成例](./images/makepageSample.png)
+
 次のようにH1などの大見出しでページを作ることもできますが、レイアウトコンポーネントの
 VerticalLayout、HorizontalLayoutを使った方が良いと思います。
 
