@@ -182,4 +182,28 @@ VerticalLayout、HorizontalLayoutを使った方が良いと思います。
 読んでください。
 https://vaadin.com/docs/latest/flow/security/enabling-security
 
+~~~
+package com.example.application.views.main;
+
+import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
+
+@Route("Sample2")
+@AnonymousAllowed
+public class ForLectureViewSecond extends H1 {
+    public ForLectureViewSecond() {
+        var layoutName = new H1("For Lecture Sample2");
+        var toHorizontal = new Anchor("horizontal", "horizontal");
+        var toVertical = new Anchor("vertical", "vertical");
+        add(layoutName, toHorizontal, toVertical);
+    }
+}
+~~~
+
+![ページ作成例２](./images/makePageSample2.png)
+
+小ネタ：上のURLにあるlocalhost:8080の意味は、自分自身のPC(localhost)をサーバとして、8080番ポート(テスト用http接続ポート)にアクセスするという意味。localhostは`ドメイン名`であり、その実態は127.0.0.1という自分自身を指し示す`IPアドレス`で、ループバックアドレスという。`サーバクライアントモデル`では`DNS(ドメインネームシステム)`という、`IPアドレスという数字の羅列をドメイン名というわかりやすい名前に対応させる仕組み`がある。ドメイン名からIPアドレスを引く`正引き`、IPアドレスからドメイン名を引く`逆引き`がある。このような仕組みがあるので、URLではドメイン名を打っても、IPアドレスを打っても同じ場所に接続可能である。
+
 <br>[ページ最上へ戻る](#vaadin資料)
