@@ -1,5 +1,13 @@
-# ユーザー認証
-コンフィグ、ページ全部仮置き (ログイン、ログアウトページは公式Hillaからまるパクリ(レイアウトは普通に変更できる))
+# ユーザー認証を作成する　(VaadinWebSecurity)
+
+## Vaadinの公式ドキュメントを参照したログインページの実装を行う
+本項ではVaadinのデフォルトの認証システムであるVaadinWebSecurityを利用して認証機能を作成する。
+本項での流れは、
+- サインイン後に表示される`SignedView`の作成と認証機能実装前の遷移確認
+- 
+
+
+###　パッケージの追加
 
 ~~~
 import com.example.application.views.main.LoginView;
