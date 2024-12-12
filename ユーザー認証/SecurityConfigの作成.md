@@ -4,14 +4,13 @@
 本項ではVaadinのデフォルトの認証システムであるVaadinWebSecurityを利用して認証機能を作成する。
 本項での流れは、
 - サインイン後に表示される`SignedView`の作成と認証機能実装前のページ動作確認
-- 認証結果を一時記憶しておくクラスの作成(`MySession`)
 - サインインするための`SignView`の作成と認証機能の動作確認
 - 認証停止のためのサインアウト機能の追加
 
 という流れで進行する。
 
 
-###　パッケージの追加
+### パッケージの追加
 
 ~~~
 import com.example.application.views.main.LoginView;
@@ -153,3 +152,5 @@ public class MainLayout extends AppLayout {
     }
 }
 ~~~
+
+[目次へ戻る](../README.md)
