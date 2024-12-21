@@ -78,7 +78,8 @@ https://vaadin.com/docs/latest/components
 
 - #### Grid
   - グリッド表示のためのコンポーネント
-- #### 標準HTMLコンポーネント(下記URL参照)
+- #### 標準HTMLコンポーネント
+  - (下記URL参照)
   - https://vaadin.com/docs/latest/flow/create-ui/standard-html
 
 - #### H1~H6
