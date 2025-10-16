@@ -2,17 +2,18 @@
 /HELP.md/
 /bin/
 /target/
+/demo_vsbp/target
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-!**/src/main/frontend/generated/
+!**/src/main/**/target
+!**/src/test/**/target
+!**/src/main/frontend/generated
 
 ### STS ###
 /.apt_generated/
-/.classpath/
-/.factorypath/
-/.project/
-/.settings/
+/.classpath
+/.factorypath
+/.project
+/.settings
 .springBeans
 .sts4-cache
 
