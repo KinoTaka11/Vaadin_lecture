@@ -23,9 +23,9 @@ https://vaadin.com/docs/latest/components
 ### レイアウトコンポーネント(Layouts)
 - #### VerticalLayout
   - レイアウトのコンポーネント. 縦並びにしたいときにこれを使う。
-  ~~~
+  ```java
   var verticalLayout = new VerticalLayout(); 
-  ~~~
+  ```
   ※ 例ではインスタンス変数名をコンポーネント名に揃えていますが、必ず揃える必要があるわけではありません。
   極論、以下のようでも動作します。(これは他のコンポーネントでも同様です)
   ~~~
