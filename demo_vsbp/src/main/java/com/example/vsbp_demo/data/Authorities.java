@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public record Authorities(String userName, String userRoles) {
 
-    // VaadinWebSecurity(Spring-Security)に対応する形でuserRolesを返すメソッド
+    // Spring-Securityに対応する形でuserRolesを返すメソッド
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Optional.ofNullable(userRoles) // userRolesがnullの場合、Optional.empty()を返す
                 .map(roles -> roles.trim().split(",")) // userRolesが存在する場合、前後の空白を取り除き、カンマで分割

@@ -3,10 +3,12 @@ package com.example.vsbp_demo.config;
 import com.example.vsbp_demo.page.SignPage;
 import com.example.vsbp_demo.service.IUserService;
 import com.example.vsbp_demo.service.UserService;
-import com.vaadin.flow.spring.security.VaadinWebSecurity;
+import com.vaadin.flow.spring.security.VaadinAwareSecurityContextHolderStrategyConfiguration;
+import com.vaadin.flow.spring.security.VaadinSecurityConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,10 +18,12 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
 @Configuration
-public class SecurityConfig extends VaadinWebSecurity {
+@Import(VaadinAwareSecurityContextHolderStrategyConfiguration.class)
+public class SecurityConfig {
 
     private final IUserService userService;
 
@@ -29,14 +33,15 @@ public class SecurityConfig extends VaadinWebSecurity {
         this.userService = userService;
     }
 
-    // configure(HttpSecurity)のオーバーライド
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
-        setLoginView(http, SignPage.class);
+    @Bean
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http.with(VaadinSecurityConfigurer.vaadin(), configurer -> {
+            configurer.loginView(SignPage.class);
+        }).build();
     }
 
-    // インメモリユーザの登録、@BeanでDIコンテナに登録していりゅ
+
+    // インメモリユーザの登録、@BeanでDIコンテナに登録している。
 //    @Bean
 //    public UserDetailsManager userDetailsService() {
 //        UserDetails user =
