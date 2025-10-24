@@ -91,6 +91,7 @@ public class UserMakerPage extends VerticalLayout {
             }
             // 例：userRole = "ROLE_ADMIN,ROLE_USER" など
             // カンマで分割して、各要素に "ROLE_" を付加する
+            // ここの処理のような、カンマ区切りで複数データを1カラムに格納する方法は、ジェイウォークというアンチパターンであるため、本当は避けるべきである
             userRole = getPrefixedRoles(userRole);
             try {
                 userService.registerUser(userName, userPass);
