@@ -50,7 +50,7 @@ public class UserMakerPage extends VerticalLayout {
 
         // ロールフィールド
         TextField userRoleField = new TextField("ここにユーザのロールを入力して");
-        userPassField.setRequired(true);
+        userRoleField.setRequired(true);
 
         var binder = new Binder<>();
         binder.forField(userNameField)
